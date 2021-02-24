@@ -4,7 +4,10 @@ import './header.scss';
 const Header = () => {
     return (
         <div className='header'>
-            Header
+            <div className="logo">LOGO</div>
+            <div className="search">
+                <input type="search" placeholder='search movie...'/>
+            </div>
         </div>
     )
 }

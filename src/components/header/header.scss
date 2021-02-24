@@ -1,3 +1,37 @@
 .header{
-    background-color: red;
+    background-color: rgb(52, 63, 228);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+
+    .logo{
+        color: #fff;
+        font-weight: bold;
+        border: 1px solid;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .search input[type= "search"]{
+        padding: 7px;
+        border: 1px solid #fff;
+        background-color: inherit;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+
+        &::placeholder{
+            color:#fff;
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
 }
+
