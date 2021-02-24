@@ -1,9 +1,11 @@
+import Header from "./components/header/Header";
+
 
 
 function App() {
   return (
-    <div className="App">
-   GHJK
+    <div className="app">
+      <Header />
     </div>
   );
 }
