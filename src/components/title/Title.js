@@ -20,10 +20,7 @@ const moviesImages = `https://image.tmdb.org/t/p/w500`;
         <div className='title' 
         style={{ backgroundImage: `url(${moviesImages}${background?.poster_path})`}}>
             <div className="title__text__container">
-                <h1>{background.title}</h1>
-                <p>{background.overview}</p>
-                <p className='vote'>{background.vote_average}</p>
-                {/* <p>{background.release_date}</p> */}
+                <h1>Unlited movies and tv shows</h1>
             </div>
         </div>
     )

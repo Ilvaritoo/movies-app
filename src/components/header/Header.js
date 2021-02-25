@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './header.scss';
 
 const Header = () => {
+
+    const [isNavBackground, setIsNavBackground] = useState(false)
+    
+
+    useEffect(() => {
+        window.addEventListener('scroll', ()=> {
+            if(window.scrollY > 100){
+                return setIsNavBackground(true);
+            }else {
+                return setIsNavBackground(false);
+            }
+        });
+        return window.removeEventListener('scroll', ()=> {});
+        
+    },[]);
+    
     return (
-        <div className='header'>
+        <div className={`header ${isNavBackground ? 'header__backround': ''}`}>
             <div className="logo">LOGO</div>
             <div className="search">
                 <input type="search" placeholder='search movie...'/>

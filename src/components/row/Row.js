@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Item from './item/Item';
+import './row.scss';
 
 const Row = ({test}) => {
 
@@ -14,11 +15,11 @@ const Row = ({test}) => {
 
 
     return (
-        <div>
+        <div className='row'>
             {
                 movie.map(item => {
                     return(
-                        <Item key={item.id}/>
+                        <Item key={item.id} item={item}/>
                     )
                 })
             }

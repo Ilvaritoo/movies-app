@@ -1,5 +1,4 @@
 .header{
-    // background-color: rgb(52, 63, 228);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,6 +7,10 @@
     top: 0;
     width: 100%;
     z-index: 5;
+    color: red;
+    // transition: 0.7s;
+
+    
 
     .logo{
         color: #fff;
@@ -35,3 +38,7 @@
     }
 }
 
+.header__backround{
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all .4s;
+}
