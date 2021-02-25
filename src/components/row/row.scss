@@ -1,30 +1,29 @@
 .row{
     position: relative;
+    padding-top: 70px;
 
     .row__genres__switch{
         width: 100px;
         height: 100px;
-        background-color: blue;
+        background-color: rgb(50, 50, 182);
         display: grid;
         place-items: center;
         border-radius: 50%;
         position: absolute;
-        top: -100px;
+        top: 10px;
         left: 35%;
         z-index: 100;
         color: #fff;
+        z-index: 0;
     }
 }
-
-
-
 
 .row__genres{
     margin: 50px 0 20px 0 ;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: red;
+    background-color: #8b8b8b;
     height: 0;
     overflow: hidden;
     transition: 0.5s;
@@ -67,6 +66,7 @@
 
 @media(min-width: 500px){
     .row{
+        padding-top: 0;
         .row__genres__switch{
             display: none;
         }
@@ -75,6 +75,10 @@
     .genres__btn{
         padding: 10px 15px;
         margin: 20px;
+    }
+    .row__genres{
         height: 100%;
+        margin: 40px 0;
+        background-color: inherit;
     }
 }

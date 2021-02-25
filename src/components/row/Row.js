@@ -25,7 +25,6 @@ const Row = ({test}) => {
             <div className="row__genres__switch" onClick={openGenres}>
                 <h3>{isBtnVisible ? 'Close' : 'Genres'}</h3>
             </div>
-            {/* <div className="row__genres"> */}
             <div className={`row__genres ${isBtnVisible ? 'row__genres__visible' : ''}`}>
                 <button className='row__genres__btn'>Popular</button>
                 <button className='row__genres__btn'>Action</button>
