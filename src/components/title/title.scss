@@ -1,6 +1,27 @@
 .title{
-    margin-top: 60px;
     background-color: lavender;
-    min-height: calc(100vh - 60px);
-    
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+
+    .title__text__container{
+        max-width: 350px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, .3);
+        backdrop-filter: blur(10px);
+        margin-left: 10px;
+
+        h1{
+            margin-bottom: 10px;
+        }
+
+        .vote{
+            font-weight: bold;
+            text-align: end;
+            // background-color: #fff;
+        }
+    }
 }
