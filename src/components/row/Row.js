@@ -22,8 +22,8 @@ const Row = ({test}) => {
     console.log(isBtnVisible);
     return (
         <div className='row'>
-            <div className="row__genres__switch" onClick={openGenres}>
-                <h3>{isBtnVisible ? 'Close' : 'Genres'}</h3>
+            <div className="row__genres__switch" onClick={openGenres} style={{backgroundColor: isBtnVisible ? 'red' : 'green'}}>
+                <h3 >{isBtnVisible ? 'Close' : 'Genres'}</h3>
             </div>
             <div className={`row__genres ${isBtnVisible ? 'row__genres__visible' : ''}`}>
                 <button className='row__genres__btn'>Popular</button>

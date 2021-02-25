@@ -1,6 +1,6 @@
 .row{
     position: relative;
-    padding-top: 70px;
+    padding-top: 90px;
 
     .row__genres__switch{
         width: 100px;
@@ -10,7 +10,7 @@
         place-items: center;
         border-radius: 50%;
         position: absolute;
-        top: 10px;
+        top: 20px;
         left: 35%;
         z-index: 100;
         color: #fff;
@@ -19,7 +19,7 @@
 }
 
 .row__genres{
-    margin: 50px 0 20px 0 ;
+    margin: 50px 0 0 0 ;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
