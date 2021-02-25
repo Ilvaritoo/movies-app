@@ -5,7 +5,8 @@ const moviesImages = `https://image.tmdb.org/t/p/w500`;
 
 
 const Item = ({ item }) => {
-    const { id, adult, original_language, title, poster_path, release_date, vote_average, overview } = item;
+    // const { id, adult, original_language, title, poster_path, release_date, vote_average, overview } = item;
+    const { title, poster_path, release_date, vote_average } = item;
 
     return (
         <div className='item'>
