@@ -16,13 +16,25 @@ const Row = ({test}) => {
 
     return (
         <div className='row'>
-            {
+            <div className="genres">
+                <button className='genres__btn'>Popular</button>
+                <button className='genres__btn'>Action</button>
+                <button className='genres__btn'>Comedy</button>
+                <button className='genres__btn'>New</button>
+                <button className='genres__btn'>Cartoon</button>
+                <button className='genres__btn'>Scary</button>
+                <button className='genres__btn'>Most Rated</button>
+            </div>
+            <div className="row__items">
+                {
                 movie.map(item => {
                     return(
                         <Item key={item.id} item={item}/>
                     )
                 })
             }
+            </div>
+            
         </div>
     )
 }
