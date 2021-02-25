@@ -11,7 +11,7 @@ const Row = ({test}) => {
         axios.get(test)
         .then(res => setMovie(res.data.results))
         .catch(error => console.log(error))
-    }, []);
+    }, [test]);
 
 
     return (
