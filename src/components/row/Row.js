@@ -2,52 +2,66 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Item from './item/Item';
 import './row.scss';
-import{genresId} from '../../requests';
-
-// const genres = 'https://api.themoviedb.org/3/genre/movie/list?api_key=864d74a3a6d66b76c9fc89a4df3871e6&language=en-US';
-
+import { genresId} from '../../requests';
+import {test, genres} from '../../links';
 
 
-const Row = ({test}) => {
+const Row = () => {
 
     const [movie, setMovie] = useState([]);
     const [isBtnVisible, setIsBtnVisible] = useState(false);
 
-    useEffect(()=> {
+    useEffect(() => {
         axios.get(test)
-        .then(res => setMovie(res.data.results))
-        .catch(error => console.log(error))
-    }, [test]);
+            .then(res => setMovie(res.data.results))
+            .catch(error => console.log(error))
+    }, []);
 
     // CHANGE BUTTON VISIBILITY
     const openGenres = () => {
         setIsBtnVisible(isBtnVisible => !isBtnVisible)
     };
 
-    console.log(isBtnVisible);
+    // CHANGE GENRE FUNCTION WHEN USER CLICKS 
+    const changeGenre = (id)=>{
+        console.log(id);
+    }
+
+
+
     return (
         <div className='row'>
-            <div className="row__genres__switch" onClick={openGenres} style={{backgroundColor: isBtnVisible ? 'red' : 'green'}}>
+            {/* GENRES SWITCH BUTTON */}
+            <div className="row__genres__switch" onClick={openGenres} style={{ backgroundColor: isBtnVisible ? 'red' : 'green' }}>
                 <h3 >{isBtnVisible ? 'Close' : 'Genres'}</h3>
             </div>
-            {/* add class to show / hide genres buttons */}
+
+           {/* ALL GENRES BUTTONS CONTAINER */}
             <div className={`row__genres ${isBtnVisible ? 'row__genres__visible' : ''}`}>
                 {
                     genresId.map(genreBtn => {
-                        return <button key={genreBtn.id} className='row__genres__btn'>{genreBtn.name}</button>
+                        return (
+                        <button key={genreBtn.id} className='row__genres__btn'
+                        onClick={() => changeGenre(genreBtn.id)}
+                        >{genreBtn.name}
+                        </button>
+                    )})
+                }
+            </div>
+
+
+            {/* MOVIES CONTAINER */}
+            <div className="row__items">
+                {
+                    movie.map(item => {
+                        return (
+                            <Item key={item.id} item={item} />
+                        )
                     })
                 }
             </div>
-            <div className="row__items">
-                {
-                movie.map(item => {
-                    return(
-                        <Item key={item.id} item={item}/>
-                    )
-                })
-            }
-            </div>
             
+
         </div>
     )
 }

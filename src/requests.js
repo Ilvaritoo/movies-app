@@ -1,14 +1,13 @@
-export const API_KEY = '864d74a3a6d66b76c9fc89a4df3871e6';
+// export const API_KEY = '864d74a3a6d66b76c9fc89a4df3871e6';
 
-export const baseURL = 'https://api.themoviedb.org/3';
+// export const baseURL = 'https://api.themoviedb.org/3';
 
 // const movies_API = `https://api.themoviedb.org/3/movie/550?api_key=${API_KEY}`;
 // const moviesImages = `https://image.tmdb.org/t/p/w500`;
 // const searchQuery = `https://api.themoviedb.org/3/movie/343611?api_key=${API_KEY}`;
 
-// const requests ={
+// export const getGenre = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=28`;
 
-// };
 // const genres = 'https://api.themoviedb.org/3/genre/movie/list?api_key=864d74a3a6d66b76c9fc89a4df3871e6&language=en-US';
 
 export const genresId= [

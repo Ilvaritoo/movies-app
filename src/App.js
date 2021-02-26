@@ -1,14 +1,15 @@
-// import Filter from "./components/filter/Filter";
 import Header from "./components/header/Header";
+import {Switch, Route} from 'react-router-dom';
 import Title from "./components/title/Title";
 import axios from 'axios';
 import { useEffect, useState } from "react";
 import Row from "./components/row/Row";
-import{API_KEY, baseURL} from './requests';
+import {test} from './links';
+import Page404 from "./components/page404.js/Page404";
 
 
 
-const test = `${baseURL}/movie/popular?api_key=${API_KEY}&page=1`;
+// const test = `${baseURL}/movie/popular?api_key=${API_KEY}&page=1`;
 
 function App() {
   const [state, setstate] = useState([]);
@@ -19,15 +20,24 @@ function App() {
       .catch(error => console.log(error))
   }, []);
 
-  console.log(state);
+  // console.log(state);
 
 
   return (
     <div className="app">
       <Header />
-      {/* <Filter /> */}
-      <Title test={test}/>
-      <Row test={test}/>
+      <Switch>
+        <Route exact path='/'>
+          <Title test={test}/>
+          <Row />
+        </Route>
+        <Route exact path='/details'>
+          <h2>Hello details</h2>
+        </Route>
+        <Route>
+          <Page404 /> 
+        </Route>
+      </Switch>
     </div>
   );
 }
