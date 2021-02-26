@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #8b8b8b;
+    // background-color: #8b8b8b;
     height: 0;
     overflow: hidden;
     transition: 0.5s;
@@ -34,7 +34,7 @@
         width: 120px;
         color: #fff;
         font-size: 16px;
-        padding: 10px 15px;
+        padding: 10px 5px;
         border: 1px solid #fff;
         margin: 10px;
         border-radius: 5px;
@@ -53,7 +53,8 @@
 }
 
 .row__genres__visible{
-    height: 183px;
+    height: 427px;
+    // height: 100%;
     transition: 0.5s;
     // overflow: hidden;
 }
@@ -72,13 +73,16 @@
         }
     }
     
-    .genres__btn{
-        padding: 10px 15px;
-        margin: 20px;
-    }
+    
     .row__genres{
         height: 100%;
         margin: 40px 0;
         background-color: inherit;
+
+        .row__genres__btn{
+            margin: 15px;
+            width: 130px;
+        }
+
     }
 }

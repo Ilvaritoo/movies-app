@@ -2,11 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Item from './item/Item';
 import './row.scss';
+import{genresId} from '../../requests';
+
+// const genres = 'https://api.themoviedb.org/3/genre/movie/list?api_key=864d74a3a6d66b76c9fc89a4df3871e6&language=en-US';
+
+
 
 const Row = ({test}) => {
 
     const [movie, setMovie] = useState([]);
-    const [isBtnVisible, setIsBtnVisible] = useState(false)
+    const [isBtnVisible, setIsBtnVisible] = useState(false);
 
     useEffect(()=> {
         axios.get(test)
@@ -25,14 +30,13 @@ const Row = ({test}) => {
             <div className="row__genres__switch" onClick={openGenres} style={{backgroundColor: isBtnVisible ? 'red' : 'green'}}>
                 <h3 >{isBtnVisible ? 'Close' : 'Genres'}</h3>
             </div>
+            {/* add class to show / hide genres buttons */}
             <div className={`row__genres ${isBtnVisible ? 'row__genres__visible' : ''}`}>
-                <button className='row__genres__btn'>Popular</button>
-                <button className='row__genres__btn'>Action</button>
-                <button className='row__genres__btn'>Comedy</button>
-                <button className='row__genres__btn'>New</button>
-                <button className='row__genres__btn'>Cartoon</button>
-                <button className='row__genres__btn'>Scary</button>
-                <button className='row__genres__btn'>Most Rated</button>
+                {
+                    genresId.map(genreBtn => {
+                        return <button key={genreBtn.id} className='row__genres__btn'>{genreBtn.name}</button>
+                    })
+                }
             </div>
             <div className="row__items">
                 {
