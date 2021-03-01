@@ -10,6 +10,7 @@ import { Context } from './Context';
 
 
 function App() {
+  //eslint-disable-next-line
   const [state, setstate] = useState([]);
 
   useEffect(() => {

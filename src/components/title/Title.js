@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import './title.scss';
 
 const moviesImages = `https://image.tmdb.org/t/p/w500`;

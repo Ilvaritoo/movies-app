@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import Item from './item/Item';
 import './row.scss';
@@ -17,11 +17,11 @@ const Row = () => {
     const [isBtnVisible, setIsBtnVisible] = useState(false);
     
 
-    useEffect(() => {
-        axios.get(url)
-            .then(res => setMovie(res.data.results))
-            .catch(error => console.log(error))
-    }, []);
+    // useEffect(() => {
+    //     axios.get(url)
+    //         .then(res => setMovie(res.data.results))
+    //         .catch(error => console.log(error))
+    // }, []);
 
     useEffect(() => {
         axios.get(url)
