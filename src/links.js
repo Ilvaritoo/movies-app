@@ -12,10 +12,10 @@ const baseURL = 'https://api.themoviedb.org/3';
 
 
 // POPULAR MOVIES
-export const test = `${baseURL}/movie/popular?api_key=${API_KEY}&page=1`;
+export const test = `${baseURL}/movie/popular?api_key=${API_KEY}&page=2`;
 
 // GET GENRES ID/S
 export const genres = `${baseURL}/genre/movie/list?api_key=${API_KEY}&language=en-US`;
 
 // LINK FOR GENRES 
-// export const getGenre = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=28`;
+export const moviesGenresLink = `${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=`;
