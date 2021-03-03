@@ -1,9 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import Item from './item/Item';
-import './row.scss';
+import './row.css';
 import { genresId} from '../../requests';
-// import {ContextProvider} from '../../Context';
 
 const API_KEY = '864d74a3a6d66b76c9fc89a4df3871e6';
 const baseURL = 'https://api.themoviedb.org/3';
@@ -11,17 +10,10 @@ const baseURL = 'https://api.themoviedb.org/3';
 const defaultURL = `${baseURL}/movie/popular?api_key=${API_KEY}&page=1`;
 
 const Row = () => {
-    // const [genresLink, test] = useContext(ContextProvider);
     const [url, seturl] = useState(defaultURL);
     const [movie, setMovie] = useState([]);
     const [isBtnVisible, setIsBtnVisible] = useState(false);
     
-
-    // useEffect(() => {
-    //     axios.get(url)
-    //         .then(res => setMovie(res.data.results))
-    //         .catch(error => console.log(error))
-    // }, []);
 
     useEffect(() => {
         axios.get(url)
@@ -35,6 +27,7 @@ const Row = () => {
         setIsBtnVisible(isBtnVisible => !isBtnVisible)
     };
 
+    // CHANGE GENRE ID
     const changeGenre = (id) => {
         seturl(`${baseURL}/discover/movie?api_key=${API_KEY}&with_genres=${id}`);
     }

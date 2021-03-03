@@ -1,5 +1,5 @@
 import React from 'react';
-import './item.scss';
+import './item.css';
 const moviesImages = `https://image.tmdb.org/t/p/w500`;
 
 
