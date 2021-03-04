@@ -1,18 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import Item from './item/Item';
-import './row.css';
+import './row.scss';
 import { genresId} from '../../requests';
 import {MoviesContext} from '../../MovieProvider';
 
-// const Row = () => {
-//     const [movies, changeGenre] = useContext(MoviesContext);
-
 const Row = () => {
-    const [url, seturl] = useState(defaultURL);
+    const [movies, changeGenre] = useContext(MoviesContext);
+
     const [movie, setMovie] = useState([]);
     const [isBtnVisible, setIsBtnVisible] = useState(false);
-    
 
     useEffect(() => {
         axios.get(movies)
@@ -59,6 +56,7 @@ const Row = () => {
                 }
             </div>
             
+
         </div>
     )
 }
