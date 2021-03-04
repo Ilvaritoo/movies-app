@@ -19,7 +19,7 @@ const Title = ({ popular }) => {
 
     return (
         <div className='title'
-            style={{ backgroundImage: `url(${moviesImages}${background?.poster_path})` }}>
+            style={{ backgroundImage: `url(${moviesImages}${background?.backdrop_path})` }}>
             <div className="title__text__container">
                 <h1>Unlited movies and tv shows</h1>
             </div>
