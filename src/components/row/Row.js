@@ -1,36 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import Item from './item/Item';
 import './row.scss';
 import { genresId} from '../../requests';
-import {test, genres} from '../../links';
-
+import {MoviesContext} from '../../MovieProvider';
 
 const Row = () => {
+    const [movies, changeGenre] = useContext(MoviesContext);
 
     const [movie, setMovie] = useState([]);
     const [isBtnVisible, setIsBtnVisible] = useState(false);
 
     useEffect(() => {
-        axios.get(test)
+        axios.get(movies)
             .then(res => setMovie(res.data.results))
             .catch(error => console.log(error))
-    }, []);
+    }, [movies]);
 
     // CHANGE BUTTON VISIBILITY
     const openGenres = () => {
         setIsBtnVisible(isBtnVisible => !isBtnVisible)
     };
 
-    // CHANGE GENRE FUNCTION WHEN USER CLICKS 
-    const changeGenre = (id)=>{
-        console.log(id);
-    }
-
-
 
     return (
         <div className='row'>
+            
             {/* GENRES SWITCH BUTTON */}
             <div className="row__genres__switch" onClick={openGenres} style={{ backgroundColor: isBtnVisible ? 'red' : 'green' }}>
                 <h3 >{isBtnVisible ? 'Close' : 'Genres'}</h3>
