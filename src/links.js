@@ -22,4 +22,4 @@ export const changeGenreLink = `${baseURL}/discover/movie?api_key=${API_KEY}&wit
 
 
 // SEARCH MOVIES LINK
-// export const searchQuery = `https://api.themoviedb.org/3/movie/343611?api_key=${API_KEY}`;
+export const searchQuery = `${baseURL}/search/movie?api_key=${API_KEY}&query=`;

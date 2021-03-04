@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import './title.scss';
 import {popularMovies} from '../../links';
 
@@ -13,7 +13,7 @@ const moviesImages = `https://image.tmdb.org/t/p/w500`;
             axios.get(popularMovies)
             .then( res => setbackground(res.data.results[Math.floor(Math.random()* res.data.results.length -1)]))
             .catch(error => console.log(error))
-        },[popularMovies])
+        },[])
 
 
     return (

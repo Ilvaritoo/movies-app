@@ -1,5 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: rgb(56, 55, 55);
+    height: 50vh;
+  }
 
-.item{
+  .item{
     height: 450px;
     width: 250px;
     margin: 15px;
@@ -27,4 +36,3 @@
         }
     }
 }
-

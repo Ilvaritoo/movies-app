@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './header.css';
+import {MoviesContext} from '../../MovieProvider';
 
 const Header = () => {
+    // eslint-disable-next-line
+    const [movies, changeGenre, searchMovies] = useContext(MoviesContext);
 
     const [isNavBackground, setIsNavBackground] = useState(false)
     
@@ -22,7 +25,9 @@ const Header = () => {
         <div className={`header ${isNavBackground ? 'header__backround': ''}`}>
             <div className="logo">LOGO</div>
             <div className="search">
-                <input type="search" placeholder='search movie...'/>
+                <input type="search" 
+                    placeholder='search movie...' 
+                    onChange={e => searchMovies(e.target.value)}/>
             </div>
         </div>
     )
