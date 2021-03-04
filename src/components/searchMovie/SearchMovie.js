@@ -14,12 +14,17 @@ const SearchMovie = () => {
         axios.get(searchMovie)
             .then(res => setItems(res.data.results))
             .catch(error => console.log(error))
-    }, [searchMovie])
+    }, [searchMovie]);
+
+    const removeComponent = () => {
+        setItems(null);
+    }
 
     return (
-        <div className= {items ? 'searchMovie' : ''}>
+        <div className={items ? 'searchMovie' : ''}>
+            <div className="closeBtn"><button onClick={removeComponent}>X</button></div>
             {items && items.map(item => {
-                const { title, poster_path, release_date, vote_average} = item;
+                const { title, poster_path, release_date, vote_average } = item;
                 return (
                     <div className="item" key={item.id}>
                         <div className="item__img">

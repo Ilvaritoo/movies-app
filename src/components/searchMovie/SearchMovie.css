@@ -15,4 +15,11 @@
   overflow-y: auto;
   padding-top: 50px;
 }
+
+.searchMovie .closeBtn {
+  background-color: red;
+  position: fixed;
+  top: 70px;
+  right: 10px;
+}
 /*# sourceMappingURL=SearchMovie.css.map */
