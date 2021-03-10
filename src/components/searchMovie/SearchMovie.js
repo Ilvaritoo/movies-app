@@ -8,7 +8,9 @@ const moviesImages = `https://image.tmdb.org/t/p/w500`;
 const SearchMovie = () => {
     // eslint-disable-next-line
     const [movies, changeGenre, searchMovies, searchMovie] = useContext(MoviesContext);
-    const [items, setItems] = useState([]);
+
+    // CHECKS ARE THERE SOME ITEMS
+    const [items, setItems] = useState('');
 
     useEffect(() => {
         axios.get(searchMovie)
@@ -16,13 +18,15 @@ const SearchMovie = () => {
             .catch(error => console.log(error))
     }, [searchMovie]);
 
+    // THIS FUNCTION REMOVES SEARCH COMPONENT WHEN CLICKS 'CLOSE' BUTTON
     const removeComponent = () => {
-        setItems(null);
+        setItems('');
     }
 
+    console.log(items);
     return (
-        <div className={items ? 'searchMovie' : ''}>
-            <div className="closeBtn"><button onClick={removeComponent}>X</button></div>
+        <div className={items ? 'searchMovie' : 'removeSearchMovie'}>
+            <div className="closeBtn"><button onClick={removeComponent}>Close</button></div>
             {items && items.map(item => {
                 const { title, poster_path, release_date, vote_average } = item;
                 return (

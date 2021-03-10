@@ -12,9 +12,20 @@
     // position: relative;
 
     .closeBtn{
-        background-color: red;
         position: fixed;
-        top: 70px;
-        right: 10px;
+        top: 65px;
+        right: 20px;
+
+        button{
+            background-color: transparent;
+            color: red;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
     }
+}
+
+.removeSearchMovie{
+    display: none;
 }
