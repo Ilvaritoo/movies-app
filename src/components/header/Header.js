@@ -4,7 +4,7 @@ import { MoviesContext } from '../../MovieProvider';
 
 const Header = () => {
     // eslint-disable-next-line
-    const [movies, changeGenre, searchMovies, searchMovie] = useContext(MoviesContext);
+    const [movies, changeGenre, searchMovies, searchMovie, removeSearchComponent, inputValue] = useContext(MoviesContext);
 
     const [isNavBackground, setIsNavBackground] = useState(false)
 
@@ -20,14 +20,15 @@ const Header = () => {
         return window.removeEventListener('scroll', () => { });
 
     }, []);
+    
 
     return (
         <div className={`header ${isNavBackground ? 'header__backround' : ''}`}>
-            <div className="logo">LOGO</div>
+            <div className="logo">Movie Cloud</div>
             <div className="search">
                 <input type="search"
                     placeholder='search movie...'
-                    value={searchMovie}
+                    value={searchMovie ? inputValue : ''}
                     onChange={e => searchMovies(e.target.value)} />
             </div>
         </div>

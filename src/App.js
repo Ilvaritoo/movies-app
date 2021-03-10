@@ -5,15 +5,16 @@ import Popular from "./components/popularMoviesRow/Popular";
 import SearchMovie from "./components/searchMovie/SearchMovie";
 
 function App() {
-  
+
   return (
     <div className="app">
       <Header />
+      <SearchMovie />
       <Title />
       <Popular />
       <Row />
 
-      <SearchMovie />
+
     </div>
   );
 }
