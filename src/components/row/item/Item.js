@@ -1,5 +1,4 @@
 import React from 'react';
-// import './item.css';
 const moviesImages = `https://image.tmdb.org/t/p/w500`;
 
 
@@ -8,7 +7,7 @@ const moviesImages = `https://image.tmdb.org/t/p/w500`;
 const Item = ({ item }) => {
 
     const { title, poster_path, release_date, vote_average } = item;
-
+console.log(Math.floor(vote_average));
     return (
         <div className='item'>
             <div className="item__img">

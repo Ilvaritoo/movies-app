@@ -6,12 +6,13 @@
 }
 
 body {
-  background-color: #383737;
+  background-color: #272728;
   height: 50vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 .item {
-  height: 450px;
+  min-height: 450px;
   width: 250px;
   margin: 15px;
   background-color: #fff;
@@ -22,6 +23,16 @@ body {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
+}
+
+.item h3 {
+  padding: 5px 0;
+  height: auto;
+}
+
+.item:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .item .item__img > img {
@@ -37,5 +48,6 @@ body {
 
 .item .item__title p {
   margin: 3px 0;
+  padding-bottom: 5px;
 }
 /*# sourceMappingURL=index.css.map */
