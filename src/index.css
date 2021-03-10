@@ -50,4 +50,8 @@ body {
   margin: 3px 0;
   padding-bottom: 5px;
 }
+
+.item .item__title .item__vote {
+  padding-bottom: 5px;
+}
 /*# sourceMappingURL=index.css.map */

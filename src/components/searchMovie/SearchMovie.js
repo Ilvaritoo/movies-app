@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
+import StarRatings from 'react-star-ratings';
 import './SearchMovie.css';
 import axios from 'axios';
 import { MoviesContext } from '../../MovieProvider';
-import {AiOutlineCloseCircle} from 'react-icons/ai';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 const moviesImages = `https://image.tmdb.org/t/p/w500`;
 
 const SearchMovie = () => {
     // eslint-disable-next-line
     const [movies, changeGenre, searchMovies, searchMovie, removeSearchComponent] = useContext(MoviesContext);
+
 
     // CHECKS IS THERE SOME ITEMS
     const [items, setItems] = useState('');
@@ -33,7 +35,15 @@ const SearchMovie = () => {
                             <h3>{title}</h3>
                             <p>Released : {release_date}</p>
                             <div className="item__vote">
-                                <p>Rate <span style={{ backgroundColor: vote_average > 6 ? 'green' : 'orange' }}>{vote_average}</span></p>
+                                <StarRatings
+                                    rating={vote_average}
+                                    starRatedColor={vote_average > 6 ? 'green' : 'red'}
+                                    // changeRating={setRating}
+                                    numberOfStars={10}
+                                    name='rating'
+                                    starDimension="21px"
+                                    starSpacing="1px"
+                                />
                             </div>
                         </div>
 
