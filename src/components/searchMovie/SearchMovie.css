@@ -13,21 +13,16 @@
       -ms-flex-pack: center;
           justify-content: center;
   overflow-y: auto;
-  padding-top: 50px;
+  padding-top: 90px;
+  z-index: 10;
 }
 
 .searchMovie .closeBtn {
   position: fixed;
   top: 65px;
   right: 20px;
-}
-
-.searchMovie .closeBtn button {
-  background-color: transparent;
-  color: red;
-  padding: 8px 15px;
-  border-radius: 5px;
-  font-size: 16px;
+  color: #fff;
+  font-size: 35px;
 }
 
 .removeSearchMovie {

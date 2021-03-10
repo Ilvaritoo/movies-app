@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './SearchMovie.css';
 import axios from 'axios';
 import { MoviesContext } from '../../MovieProvider';
+import {AiOutlineCloseCircle} from 'react-icons/ai';
 
 const moviesImages = `https://image.tmdb.org/t/p/w500`;
 
@@ -20,7 +21,7 @@ const SearchMovie = () => {
 
     return (
         <div className={items ? 'searchMovie' : 'removeSearchMovie'}>
-            <div className="closeBtn"><button onClick={removeSearchComponent}>Close</button></div>
+            <div className="closeBtn" onClick={removeSearchComponent}><AiOutlineCloseCircle /></div>
             {items && items.map(item => {
                 const { title, poster_path, release_date, vote_average } = item;
                 return (
